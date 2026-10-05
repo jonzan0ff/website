@@ -37,14 +37,11 @@ export default function AgentPipeline() {
                     : "border-border"
               }`}
             >
-              <div className="flex items-center gap-2">
-                <span
-                  className={`h-2 w-2 rounded-full transition-colors duration-500 ${
-                    now || done ? "bg-accent" : "bg-border"
-                  } ${now ? "animate-pulse" : ""}`}
-                />
-                <span className="font-mono text-xs text-muted">0{i + 1}</span>
-              </div>
+              <span
+                className={`block h-2 w-2 rounded-full transition-colors duration-500 ${
+                  now || done ? "bg-accent" : "bg-border"
+                } ${now ? "animate-pulse" : ""}`}
+              />
               <p className="mt-3 font-medium">{s.who}</p>
               <p className="mt-1 text-sm text-muted">{s.what}</p>
             </li>

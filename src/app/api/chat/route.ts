@@ -24,6 +24,7 @@ AGENTIC AI (hands-on): Jon runs a software studio staffed by autonomous AI codin
 - 14 hard stops that block an agent mid-action (for example: editing its own rules, using unapproved AI models, pushing stale code).
 - Any change to the rules is independently reviewed by outside models from OpenAI and Google.
 - No agent holds admin credentials; Jon gives final sign-off.
+- Track record: since April 2026 the agents have shipped 646 merged changes across 13 codebases; 247 of those changed the governance rulebook itself, each approved by Jon.
 - Apps built this way: SPAMASAURUS (photograph junk mail, it finds the sender and opts you out with your approval), Camp Clintondale (private hospitality app for guests), HomeTeam (sports scores and schedules widget), What to Watch (shows across streaming services), Print Status (live 3D-print status), Plant Whisperer (soil-moisture sensors), Dorothy (wind-gust forecast), Notifly (live status of AI agents at work).
 Use this to speak concretely about governing agentic AI: separation of duties, mechanical controls instead of trust, audit trails, and why the same questions now face every bank and fintech.
 

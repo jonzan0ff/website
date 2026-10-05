@@ -13,13 +13,6 @@ const STATS = [
   { value: "40", label: "early-stage fintech investments" },
 ];
 
-const AI_STATS = [
-  { value: "8", label: "software suites built and running" },
-  { value: "22", label: "written governance rules every agent operates under" },
-  { value: "14", label: "hard stops that block an agent mid-action" },
-  { value: "0", label: "admin keys held by any agent" },
-];
-
 const PILLARS = [
   {
     title: "Ecosystems",
@@ -57,13 +50,8 @@ const PORTFOLIO = [
   { name: "Lance", where: "New York", since: 2019 },
 ];
 
-function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
-  return (
-    <div className="mb-10">
-      <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">{eyebrow}</p>
-      <h2 className="mt-3 font-serif text-3xl sm:text-4xl">{title}</h2>
-    </div>
-  );
+function SectionTitle({ title }: { title: string }) {
+  return <h2 className="mb-10 font-serif text-3xl sm:text-4xl">{title}</h2>;
 }
 
 export default function Home() {
@@ -85,9 +73,7 @@ export default function Home() {
 
       <header className="grid items-center gap-12 py-12 sm:py-20 md:grid-cols-[1fr_auto]">
         <div className="max-w-2xl">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
-            The Ghost of FinTech Future
-          </p>
+          <p className="font-serif text-lg italic text-accent">The Ghost of FinTech Future</p>
           <h1 className="mt-5 font-serif text-4xl leading-[1.1] sm:text-5xl lg:text-6xl">
             Twenty-five years where traditional financial services meet the entrepreneurs rewiring them.
           </h1>
@@ -115,6 +101,19 @@ export default function Home() {
         <IntroPortrait className="mx-auto w-64 sm:w-80" />
       </header>
 
+      <section className="mb-16 grid grid-cols-2 place-items-center gap-x-8 gap-y-10 border-y border-border py-10 lg:grid-cols-4">
+        {LOGOS.map((l) => (
+          <Image
+            key={l.name}
+            src={l.src}
+            alt={l.name}
+            width={0}
+            height={0}
+            className={`${l.height} w-auto opacity-90 brightness-0 invert`}
+          />
+        ))}
+      </section>
+
       <section className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border lg:grid-cols-4">
         {STATS.map((s) => (
           <div key={s.value} className="bg-background p-6">
@@ -125,7 +124,7 @@ export default function Home() {
       </section>
 
       <section id="ai" className="scroll-mt-8 py-24">
-        <SectionTitle eyebrow="Agentic AI" title="My software studio is staffed by AI agents." />
+        <SectionTitle title="My software studio is staffed by AI agents." />
         <p className="-mt-4 mb-10 max-w-3xl text-lg leading-relaxed text-muted">
           I design every product. Autonomous AI agents write, test and review the code, inside a
           governance system I built: who can change what, which checks must pass, and when a human
@@ -135,18 +134,17 @@ export default function Home() {
 
         <AgentPipeline />
 
-        <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border lg:grid-cols-4">
-          {AI_STATS.map((s) => (
-            <div key={s.label} className="bg-background p-6">
-              <p className="font-serif text-4xl text-accent">{s.value}</p>
-              <p className="mt-2 text-sm leading-snug text-muted">{s.label}</p>
-            </div>
-          ))}
-        </div>
+        <p className="mt-10 max-w-3xl font-serif text-2xl leading-snug sm:text-3xl">
+          Since April, my agents have shipped{" "}
+          <span className="text-accent">646 changes</span> across{" "}
+          <span className="text-accent">13 codebases</span>.{" "}
+          <span className="text-accent">247</span> of them rewrote the rulebook that governs the
+          agents themselves, and none went in without my approval.
+        </p>
       </section>
 
       <section id="work" className="scroll-mt-8 pb-24">
-        <SectionTitle eyebrow="The work" title="From the trading floor to the startup edge" />
+        <SectionTitle title="From the trading floor to the startup edge" />
         <div className="grid gap-6 md:grid-cols-3">
           {PILLARS.map((p) => (
             <div key={p.title} className="rounded-2xl border border-border bg-surface p-7">
@@ -155,23 +153,11 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="mt-12 grid grid-cols-2 place-items-center gap-x-8 gap-y-12 border-y border-border py-12 lg:grid-cols-4">
-          {LOGOS.map((l) => (
-            <Image
-              key={l.name}
-              src={l.src}
-              alt={l.name}
-              width={0}
-              height={0}
-              className={`${l.height} w-auto opacity-90 brightness-0 invert`}
-            />
-          ))}
-        </div>
         <p className="mt-6 text-sm text-muted">Lehigh University · BS, Mechanical Engineering and Mechanics</p>
       </section>
 
       <section className="pb-24">
-        <SectionTitle eyebrow="Portfolio" title="A few of the founders I've backed" />
+        <SectionTitle title="A few of the founders I've backed" />
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {PORTFOLIO.map((c) => (
             <div key={c.name} className="rounded-xl border border-border p-4">
@@ -185,7 +171,7 @@ export default function Home() {
       </section>
 
       <section id="twin" className="scroll-mt-8 pb-24">
-        <SectionTitle eyebrow="Digital twin" title="Ask me anything" />
+        <SectionTitle title="Ask me anything" />
         <div className="grid items-start gap-10 md:grid-cols-[auto_1fr]">
           <div className="flex flex-col items-center gap-4 md:w-56">
             <Image
@@ -200,8 +186,8 @@ export default function Home() {
               }`}
             />
             <p className="text-center text-sm text-muted">
-              An AI version of me, briefed on my career and views. For anything that matters, email
-              the real me.
+              An AI version of me, briefed on my career and views. For anything that matters, write
+              to the real me below.
             </p>
           </div>
           <TwinChat onSpeakingChange={setSpeaking} />
