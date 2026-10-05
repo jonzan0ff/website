@@ -5,6 +5,7 @@ import Image from "next/image";
 import TwinChat from "@/components/TwinChat";
 import AgentPipeline from "@/components/AgentPipeline";
 import IntroPortrait from "@/components/IntroPortrait";
+import ContactForm from "@/components/ContactForm";
 
 const STATS = [
   { value: "25+", label: "years building and backing financial technology" },
@@ -209,19 +210,23 @@ export default function Home() {
       </section>
 
       <footer id="contact" className="scroll-mt-8 border-t border-border py-16">
-        <h2 className="font-serif text-3xl sm:text-4xl">Say hello.</h2>
-        <p className="mt-4 max-w-xl text-muted">
-          Founders, operators, institutions and boards: the best conversations still start with an
-          email.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
-          <a href="mailto:jon@zanoff.org" className="text-accent hover:underline">jon@zanoff.org</a>
-          <a href="https://linkedin.com/in/jonzanoff" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
-            LinkedIn
-          </a>
-          <a href="https://empirestartups.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
-            Empire Startups
-          </a>
+        <div className="grid gap-10 md:grid-cols-[2fr_3fr]">
+          <div>
+            <h2 className="font-serif text-3xl sm:text-4xl">Say hello.</h2>
+            <p className="mt-4 max-w-md text-muted">
+              Founders, operators, institutions and boards: the best conversations still start with
+              a note.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+              <a href="https://linkedin.com/in/jonzanoff" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                LinkedIn
+              </a>
+              <a href="https://empirestartups.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                Empire Startups
+              </a>
+            </div>
+          </div>
+          <ContactForm />
         </div>
       </footer>
     </div>
