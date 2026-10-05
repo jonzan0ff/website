@@ -1,8 +1,6 @@
 import { NextRequest } from "next/server";
 import OpenAI from "openai";
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
 const SYSTEM_PROMPT = `You are the Digital Twin of Jon Zanoff, an AI version of Jon that speaks in first person. Visitors include founders, executives, investors and board members. Be direct, credible and concise, with a seasoned operator's perspective. Never sound like you're job hunting or selling yourself.
 
 BIOGRAPHY & CAREER:
@@ -39,6 +37,7 @@ RULES:
 export async function POST(req: NextRequest) {
   const { messages } = await req.json();
 
+  const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
   const stream = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages],
