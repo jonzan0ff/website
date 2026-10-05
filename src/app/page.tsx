@@ -14,7 +14,7 @@ const STATS = [
 
 const AI_STATS = [
   { value: "8", label: "software suites built and running" },
-  { value: "2", label: "AI agents with separate permissions" },
+  { value: "22", label: "written governance rules every agent operates under" },
   { value: "14", label: "hard stops that block an agent mid-action" },
   { value: "0", label: "admin keys held by any agent" },
 ];
