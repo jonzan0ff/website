@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Play, Square } from "lucide-react";
 
 const SCRIPT =
-  "Hi, I'm Jon Zanoff. Agentic AI is moving faster than anything I've seen in twenty-five years of fintech. A static website, a resume, or even LinkedIn can't possibly keep pace, so I built one you can talk to. Ask me anything!";
+  "Hi, I'm Jon Zanoff. Agentic AI is moving faster than anything I've seen in twenty-five years of fintech. A static website, a resume, or even LinkedIn can't possibly keep pace, so I built one you can talk to. So go ahead, ask me anything.";
 
 export default function IntroPortrait({ className = "" }: { className?: string }) {
   const [playing, setPlaying] = useState(false);

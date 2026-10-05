@@ -61,7 +61,7 @@ export default function TwinChat({ onSpeakingChange }: TwinChatProps) {
         update(full);
       }
     } catch {
-      update("I couldn't connect just now. Use the contact form below and the real me will answer.");
+      update("I couldn't connect just now. Find me on LinkedIn and the real me will answer.");
     } finally {
       setStreaming(false);
     }
