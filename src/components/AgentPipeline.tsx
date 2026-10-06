@@ -6,7 +6,7 @@ const STEPS = [
   { who: "Builder agent", what: "Writes the change" },
   { who: "Up to 18 automated checks", what: "Scope, integrity, tests, screenshots" },
   { who: "QA agent", what: "Reproduces it independently" },
-  { who: "OpenAI + Google", what: "Outside models review any rule change" },
+  { who: "6-model review board", what: "Each LLM reviews what it does best" },
   { who: "Me", what: "Final sign-off" },
 ];
 

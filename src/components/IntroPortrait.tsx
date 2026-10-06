@@ -67,7 +67,7 @@ export default function IntroPortrait({ className = "" }: { className?: string }
         className="flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm transition-colors hover:border-accent/50 hover:text-accent"
       >
         {playing ? <Square size={14} /> : <Play size={14} />}
-        {playing ? "Stop" : "Hear my intro"}
+        {playing ? "Stop" : "Start here"}
       </button>
       <p
         className={`max-w-xs text-center text-sm leading-relaxed text-muted transition-opacity duration-500 ${

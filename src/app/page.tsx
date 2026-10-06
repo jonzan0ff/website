@@ -96,7 +96,6 @@ export default function Home() {
               How my AI agents work
             </a>
           </div>
-          <p className="mt-6 text-sm text-muted">New York</p>
         </div>
         <IntroPortrait className="mx-auto w-64 sm:w-80" />
       </header>
@@ -136,7 +135,7 @@ export default function Home() {
 
         <p className="mt-10 max-w-3xl font-serif text-2xl leading-snug sm:text-3xl">
           Since April, my agents have shipped{" "}
-          <span className="text-accent">646 changes</span> across{" "}
+          <span className="text-accent">646 epics</span> across{" "}
           <span className="text-accent">13 codebases</span>.{" "}
           <span className="text-accent">247</span> of them rewrote the rulebook that governs the
           agents themselves, and none went in without my approval.
