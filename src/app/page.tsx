@@ -35,6 +35,15 @@ const LOGOS = [
   { name: "E*TRADE", src: "/logos/etrade.svg", height: "h-6" },
 ];
 
+const LLMS = [
+  { name: "OpenAI", src: "/logos/ai/openai.svg" },
+  { name: "Anthropic", src: "/logos/ai/anthropic.svg" },
+  { name: "Google Gemini", src: "/logos/ai/googlegemini.svg" },
+  { name: "xAI", src: "/logos/ai/xai.svg" },
+  { name: "DeepSeek", src: "/logos/ai/deepseek.svg" },
+  { name: "Cursor", src: "/logos/ai/cursor.svg" },
+];
+
 const PORTFOLIO = [
   { name: "Bank Novo", where: "New York", since: 2017 },
   { name: "Sigma Ratings", where: "New York", since: 2017 },
@@ -124,12 +133,31 @@ export default function Home() {
 
       <section id="ai" className="scroll-mt-8 py-24">
         <SectionTitle title="My software studio is staffed by AI agents." />
-        <p className="-mt-4 mb-10 max-w-3xl text-lg leading-relaxed text-muted">
-          I design every product. Autonomous AI agents write, test and review the code, inside a
-          governance system I built: who can change what, which checks must pass, and when a human
-          has to sign off. It&apos;s the question every financial institution now faces. How do you
-          let AI act on its own and still stay in control?
-        </p>
+        <div className="-mt-4 mb-10 grid gap-10 lg:grid-cols-[1fr_13rem]">
+          <p className="max-w-3xl text-lg leading-relaxed text-muted">
+            I design every product. Autonomous AI agents write, test and review the code, inside a
+            governance system I built: who can change what, which checks must pass, and when a
+            human has to sign off. It&apos;s the question every financial institution now faces. How
+            do you let AI act on its own and still stay in control?
+          </p>
+          <aside className="border-border lg:border-l lg:pl-8">
+            <p className="mb-4 text-sm text-muted">On my review board</p>
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3 lg:grid-cols-1">
+              {LLMS.map((m) => (
+                <li key={m.name} className="flex items-center gap-3 text-sm text-foreground/75">
+                  <Image
+                    src={m.src}
+                    alt=""
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 opacity-75 brightness-0 invert"
+                  />
+                  {m.name}
+                </li>
+              ))}
+            </ul>
+          </aside>
+        </div>
 
         <AgentPipeline />
 
